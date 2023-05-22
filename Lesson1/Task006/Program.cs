@@ -4,7 +4,7 @@
 // 7 -> нет
 
 System.Console.WriteLine("Программа проверки, четное ли число");
-Console.Write("Введите целое число: ");
+Console.Write("Введите число: ");
 double num = Convert.ToInt32 (Console.ReadLine());
 
 if (num % 2 == 0)
