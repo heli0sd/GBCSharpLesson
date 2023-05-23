@@ -5,28 +5,27 @@
 // 9146548 -> 4
 // 3 -> нет
 System.Console.WriteLine("Программа для вывода третьей слева цифры, чисел любой разрядности");
-Console.Write("Введите число N: ");
-int n = Convert.ToInt32 (Console.ReadLine());
-int x =(int)Math.Log10(n) + 1; //Считаем количество цифр в числе
-do
-{
-    if (x == 3)
-    {
-            Console.WriteLine(n%10);
-            x--;
-    }
-    else if (x > 3)
-    {
-        x--;
-        n = n/10;
-    }
-    else
-    {
-        Console.WriteLine("Нет третьего числа");
-    }
-}
-while (x >= 3);
-    
+ Console.Write("Введите число N: ");
+ int n = Convert.ToInt32 (Console.ReadLine());
+ int x =(int)Math.Log10(n) + 1; //Считаем количество цифр в числе
+ do
+ {
+     if (x == 3)
+     {
+             Console.WriteLine(n%10);
+             x--;
+     }
+     else if (x > 3)
+     {
+         x--;
+         n = n/10;
+     }
+     else
+     {
+         Console.WriteLine("Нет третьего числа");
+     }
+ }
+ while (x >= 3);
 
 
 
