@@ -5,18 +5,22 @@
 
 System.Console.WriteLine("Введите любое число");
  Console.Write("Введите число N: ");
- double n = Convert.ToDouble (Console.ReadLine());
+double n = Convert.ToDouble (Console.ReadLine());
 
-double a = Math.trunc(n); // int
-double ax = a.toString().length;  // length int
-double a1 = Math.floor( n / (Math.pow(10, ax-1)) ) %10; // 1st digit
-double a2 = Math.floor( n / (Math.pow(10, ax-2)) ) %10; // 2nd digit
+double a = Math.Truncate(n); // int
+double az = Convert.ToString(a).Length;
+double ax = Convert.ToDouble(az);
+double a1 = Math.Floor( n / (Math.Pow(10, ax-1)) ) %10; // 1st digit
+double a2 = Math.Floor( n / (Math.Pow(10, ax-2)) ) %10; // 2nd digit
+double tt2 = 0;
 
 if (ax>1) 
 {
-    tt2 = n - a2 * Math.pow(10, ax-2) - a1*9*Math.pow(10, ax-2);
+    tt2 = n - a2 * Math.Pow(10, ax-2) - a1*9*Math.Pow(10, ax-2);
 } 
 else 
 {
-    tt2 = Math.trunc(n);
+    tt2 = Math.Truncate(n);
 }
+
+System.Console.WriteLine(Math.Round(tt2, 9));
