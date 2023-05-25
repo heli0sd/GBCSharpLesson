@@ -8,7 +8,7 @@ System.Console.WriteLine("Введите любое число");
 double n = Convert.ToDouble (Console.ReadLine());
 
 double a = Math.Truncate(n); // int
-double az = Convert.ToString(a).Length;
+double az = (int)Math.Log10(a) + 1;  
 double ax = Convert.ToDouble(az);
 double a1 = Math.Floor( n / (Math.Pow(10, ax-1)) ) %10; // 1st digit
 double a2 = Math.Floor( n / (Math.Pow(10, ax-2)) ) %10; // 2nd digit
