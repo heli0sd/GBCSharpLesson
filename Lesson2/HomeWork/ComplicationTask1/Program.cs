@@ -8,8 +8,8 @@ Console.Write("Введите число N: ");
 double n = Convert.ToDouble (Console.ReadLine());
 
 double a = Math.Truncate(n);
-double az = (int)Math.Log10(a) + 1;  
-double ax = Convert.ToDouble(az);
+//double ax = Convert.ToDouble((int)Math.Log10(a) + 1);
+double ax = Convert.ToDouble((int)Math.Log10(a) + 1);
 double a1 = Math.Floor( n / (Math.Pow(10, ax-1)) ) %10;
 double a2 = Math.Floor( n / (Math.Pow(10, ax-2)) ) %10;
 double tt2 = 0;
