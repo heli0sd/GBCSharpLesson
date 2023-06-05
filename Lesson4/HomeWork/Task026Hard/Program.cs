@@ -7,8 +7,14 @@
 Console.Write("Введите число: ");
 double number;
 bool isNumber = double.TryParse(Console.ReadLine(), out number);
-int BefCo = (int)Math.Log10(number) + 1;
-int AftCo = Enumerable.Range(0,17).Select(v => number * Math.Pow(10, v)).Select((d,i) => new {d , i}).First(x => x.d == (long) x.d).i;
+if (number == 0)
+    System.Console.WriteLine("Количество цифр: 1");
+else
+{
+    int BefCo = (int)Math.Log10(number) + 1;
+    int AftCo = Enumerable.Range(0,17).Select(v => number * Math.Pow(10, v)).Select((d,i) => new {d , i}).First(x => x.d == (long) x.d).i;
+    int result = BefCo + AftCo;
+    System.Console.WriteLine($"Количество цифр: {result}");
+}
 
-int result = BefCo + AftCo;
-System.Console.WriteLine(result);
+
