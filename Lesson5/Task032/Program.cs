@@ -1,27 +1,42 @@
 ﻿// Напишите программу, замена элементов массива:
 // Положительные элементы массива замените на соответствующие отрицательные и наоборот
 
-void FillArray(int[] array)
+// int x = -20;
+// int y = ~x;
+// y += 1; 
+// System.Console.WriteLine(y);
+void FillArray (int[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
-        array[i] = new Random().Next(-20, 21);
-    }   
+        array[i] = new Random().Next(-100, 101);
+    }
 }
-
-void RepArray (int[] array)
+void PrintArray(int[] array)
 {
-   int Pos = 0;
-   int Neg = 0;
-   for (int i = 0; i < array.Length; i++)
-   {
-     if (array[i] < 0)
-        array[i] *= -1; 
-   } 
-   
+    foreach (var item in array)
+    {
+        Console.Write($"{item} ");
+    }
+    System.Console.WriteLine();
+}
+void ReplaiceArray (int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = ~array[i] + 1;
+    }
 }
 
-System.Console.WriteLine("Введите размерность массива: ");
+Console.Clear();
+Console.WriteLine("Программа создает массив заданной размерности, заполняет его случайными числами от -100 до 100");
+Console.WriteLine("Затем меняет в нем положительные элементы на отрицательные и наоборот, выводит на экран");
+Console.Write("Введите размерность массива: ");
 int size = Convert.ToInt32(Console.ReadLine());
-
 int[] array = new int[size];
+
+FillArray(array);
+PrintArray(array);
+ReplaiceArray(array);
+PrintArray(array);
+
